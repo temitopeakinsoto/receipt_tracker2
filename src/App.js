@@ -17,7 +17,7 @@ function App(state) {
   console.log(state);
   return (
     <div className="App">
-      <Nav />
+      {/* <Nav /> */}
       <Route path="/login" component={Login} />
       <Route
         path="/sign-up"

@@ -51,6 +51,7 @@ const Login = ({ errors, touched }) => {
         >
           Login &rarr;
         </Button>
+        <p>Don't have an account? Sign up here...</p>
       </Form>
       {incorrect && <h2>username or password incorrect</h2>}
     </SemForm>
