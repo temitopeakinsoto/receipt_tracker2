@@ -3,20 +3,12 @@ import { withFormik, Form, Field } from "formik";
 import axios from "axios";
 import * as Yup from "yup";
 import { NavLink } from "react-router-dom";
-import { Button, Menu, Header, Form as SemForm } from "semantic-ui-react";
+import { Button, Header, Form as SemForm } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { addUsernameToState } from "../actions/addUsernameToState";
 
 import "semantic-ui-css/semantic.min.css";
 
-const errorStyle = {
-  fontSize: "1em",
-  color: "red"
-};
-
-const handleItemClick = (e) => {
-  e.preventDefault();
-};
 
 const Login = ({ errors, touched }) => {
   const [ incorrect, setIncorrect ] = useState()
@@ -32,7 +24,7 @@ const Login = ({ errors, touched }) => {
             placeholder="username"
           />
           {touched.username && errors.username && (
-            <p style={errorStyle}>{errors.username}</p>
+            <p className="errors">{errors.username}</p>
           )}
         </SemForm.Field>
         <SemForm.Field>
@@ -43,7 +35,7 @@ const Login = ({ errors, touched }) => {
             placeholder="Password"
           />
           {touched.password && errors.password && (
-            <p className="error">{errors.password}</p>
+            <p className="errors">{errors.password}</p>
           )}
         </SemForm.Field>
         <Button

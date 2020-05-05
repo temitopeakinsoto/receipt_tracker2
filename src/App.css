@@ -14,36 +14,35 @@
 }
 
 .login-Form {
-  display        : flex;
-  flex-direction : column;
-  justify-content: center;
-  padding        : 15px;
-  margin: 5rem auto;
-  /* border: 1px solid; */
-  width: inherit;
+  display         : flex;
+  flex-direction  : column;
+  justify-content : center;
+  padding         : 15px;
+  margin          : 5rem auto;
+  width           : inherit;
   background-color: white;
 } 
 
 .formContainers {
-  border: 1px solid;
-  padding: 3rem 0;
+  border          : 1px solid;
+  padding         : 3rem 0;
   background-color: darkseagreen;
-  width: 50%;
+  width           : 50%;
 }
 
 .login-register {
-  display: flex;
-  justify-content: space-around;
+  display          : flex;
+  justify-content  : space-around;
   margin: 1rem auto;
 }
 
 @media(max-width: 479px) {
   .formContainers {
-    border: none;
+    border          : none;
     background-color: white;
-    display: flex;
-    justify-content: center;
-    width: 80%;
+    display         : flex;
+    justify-content : center;
+    width           : 80%;
   }  
   .login-Form {
     width: 100%;
@@ -65,6 +64,11 @@
   border-radius   : 5px;
   margin-bottom   : 5px;
 }
+
+.errors {
+  font-size : 1em;
+  color     : red;
+};
 
 .deleteCard {
   background-color: red;

@@ -31,7 +31,7 @@ const Register = ({ errors, touched }) => {
             placeholder="username"
           />
           {touched.username && errors.username && (
-            <p className="error">{errors.username}</p>
+            <p className="errors">{errors.username}</p>
           )}
         </SemForm.Field>
         <SemForm.Field>
@@ -42,7 +42,7 @@ const Register = ({ errors, touched }) => {
             placeholder="email"
           />
           {touched.email && errors.email && (
-            <p className="errorStyle">{errors.email}</p>
+            <p className="errors">{errors.email}</p>
           )}
         </SemForm.Field>
         <SemForm.Field>
@@ -53,7 +53,7 @@ const Register = ({ errors, touched }) => {
             placeholder="Password"
           />
           {touched.password && errors.password && (
-            <p className="error">{errors.password}</p>
+            <p className="errors">{errors.password}</p>
           )}
         </SemForm.Field>
         <Button
