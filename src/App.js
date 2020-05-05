@@ -20,7 +20,7 @@ function App(state) {
       {/* <Nav /> */}
       <Route path="/login" component={Login} />
       <Route
-        path="/sign-up"
+        path="/register"
         // history={browserHistory}
         component={CreateNewUser}
       />

@@ -1,16 +1,17 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { withFormik, Form, Field } from "formik";
 import axios from "axios";
 import * as Yup from "yup";
-import { Button, Form as SemForm } from "semantic-ui-react";
+import { Button, Header, Form as SemForm } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import { Animate, HeadShake, ZoomIn } from "animate-css-styled-components";
 
-const Login = ({ errors, touched }) => {
+const Register = ({ errors, touched }) => {
   return (
     <SemForm className="formContainers">
       <Form className="login-Form">
-        <h1>Create an account:</h1>
+        <h1>Create an account</h1>
         <HeadShake
           animationIn={ZoomIn}
           duration="3s"
@@ -65,6 +66,9 @@ const Login = ({ errors, touched }) => {
         >
           Sign Up &rarr;
         </Button>
+        <Header className="login-register" as="h4">Already have an account?
+          <NavLink to="/login"> Login </NavLink>
+        </Header>
       </Form>
     </SemForm>
   );
@@ -88,7 +92,7 @@ const FormikForm = withFormik({
   }),
 
   handleSubmit(values, { props, setErrors }) {
-    if (values.email == "waffle@syrup.com") {
+    if (values.email === "waffle@syrup.com") {
       setErrors({ email: "That email is already taken" });
     } else {
       axios
@@ -102,10 +106,10 @@ const FormikForm = withFormik({
         .catch(err => {
           console.log(values);
           console.log(err.response);
-          if (err.response.status == 400) {
+          if (err.response.status === 400) {
             console.log(err.response.data);
             props.history.push(
-              "./sign-up",
+              "./register",
               setErrors({
                 takenCreds: "That email or username is already in use!"
               })
@@ -114,6 +118,6 @@ const FormikForm = withFormik({
         });
     }
   }
-})(Login);
+})(Register);
 
 export default FormikForm;

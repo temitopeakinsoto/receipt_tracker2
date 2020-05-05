@@ -19,6 +19,12 @@
   padding        : 15px;
 }
 
+.login-register {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem auto;
+}
+
 @media(min-width: 479px) {
   .formContainers {
     display: flex;
