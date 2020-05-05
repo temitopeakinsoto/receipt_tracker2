@@ -1,0 +1,153 @@
+.App {
+  text-align: center;
+}
+
+.tab {
+  width           : 100%;
+  padding         : 1em 2em;
+  background-color: #5bba6f;
+  border-radius   : 5px;
+  margin          : 0.5em auto;
+
+}
+
+.tabHeading {
+  display         : flex;
+  flex-wrap       : wrap;
+  justify-content : space-between;
+  background-color: #e6e8e6;
+  border-radius   : 5px;
+  padding         : 1em;
+}
+
+.tabHeading h2 {
+  margin: auto 0;
+}
+
+.tabHeading .formModalButton {
+  background-color: #e6e8e6;
+  border          : 3px solid #249633;
+  align-content   : right;
+}
+
+.tabHeading .formModalButton:hover {
+  background-color: #249633;
+  color           : #e6e8e6;
+  width           : none;
+}
+
+.tabContent {
+  display            : flex;
+  justify-content    : space-evenly;
+  padding            : 1em;
+  /* background-color: #e6e8e6; */
+}
+
+.nameDateCol {
+  width     : 75%;
+  text-align: left;
+}
+
+.totalCol {
+  width     : 40%;
+  text-align: left;
+  margin    : auto 0;
+}
+
+.formContainers {
+  width : 80%;
+  margin: 10em auto;
+}
+
+
+.custom-upload {
+  border : 2px solid #249633;
+  display: inline-block;
+  cursor : pointer;
+  padding: 1em;
+}
+
+.custom-upload p {
+  font-size: 1.2em;
+  margin   : auto 0;
+}
+
+.custom-upload p:hover {
+  margin: auto 0;
+  color : white;
+}
+
+.custom-upload:hover {
+  background-color: #32BF54;
+  color           : white;
+}
+
+.searchButton {
+  cursor       : pointer;
+  border       : 3px solid #249633;
+  border-radius: 5px;
+  padding      : 0.2em;
+}
+
+.searchButton:hover {
+  color           : white;
+  background-color: #249633;
+}
+
+.meta {
+  font-size: 1.5em;
+  margin: 20px 0;
+  text-decoration: underline;
+}
+
+.header {
+  width: 80%;
+  display: inline-flex;
+}
+
+.description {
+  width: 80%;
+  display: inline-flex;
+}
+
+.extra {
+  width: 80%;
+  display: inline-flex;
+}
+
+.rec-img {
+  width: 275px;
+  height: 180px;
+  margin: 20px 0;
+}
+
+.rec-img-prev {
+  width: 120px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  font-size: 1.2em;
+}
+
+.edit-btn {
+  width: 80px;
+  height: 35px;
+  margin: 0 10px;
+  background-color: orange;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid orange;
+}
+
+.del-btn {
+  width: 80px;
+  height: 35px;
+  margin: 0 10px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid red;
+  cursor: pointer;
+}
