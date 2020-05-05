@@ -56,18 +56,11 @@ const Register = ({ errors, touched }) => {
             <p className="errors">{errors.password}</p>
           )}
         </SemForm.Field>
-        <Button
-          style={{
-            margin: "1em auto",
-            backgroundColor: "#25BB49",
-            color: "white"
-          }}
-          type="submit"
-        >
+        <Button className="submit" type="submit">
           Sign Up &rarr;
         </Button>
         <Header className="login-register" as="h4">Already have an account?
-          <NavLink to="/login"> Login </NavLink>
+          <NavLink to="/login"> Login &rarr;</NavLink>
         </Header>
       </Form>
     </SemForm>
@@ -98,18 +91,16 @@ const FormikForm = withFormik({
       axios
         .post("https://receipt-tracker-api.herokuapp.com/register", values)
         .then(res => {
-          console.log(values);
-          console.log(res);
-          props.history.push("/login");
-          //   localStorage.setItem('token', res.data.payload);
+          localStorage.setItem("token", res.data.token);
+          props.addUsernameToState(values.username);
+          props.history.push("/");
         })
         .catch(err => {
-          console.log(values);
-          console.log(err.response);
-          if (err.response.status === 400) {
+          console.log("error is", err)
+          if (err.status === 400) {
             console.log(err.response.data);
             props.history.push(
-              "./register",
+              "/login",
               setErrors({
                 takenCreds: "That email or username is already in use!"
               })

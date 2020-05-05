@@ -11,7 +11,7 @@ import "semantic-ui-css/semantic.min.css";
 
 
 const Login = ({ errors, touched }) => {
-  const [ incorrect, setIncorrect ] = useState()
+  const [ incorrect, setIncorrect ] = useState(false)
   return (
     <SemForm className="formContainers">
       <Form className="login-Form">
@@ -38,19 +38,12 @@ const Login = ({ errors, touched }) => {
             <p className="errors">{errors.password}</p>
           )}
         </SemForm.Field>
-        <Button
-          style={{
-            margin: "1em auto",
-            backgroundColor: "#25BB49",
-            color: "white"
-          }}
-          type="submit"
-        >
+        <Button className="submit" type="submit">
           Login &rarr;
         </Button>
         <p></p>
-        <Header className="login-register" as="h4">Don't have an account?
-          <NavLink to="/register"> Sign Up</NavLink>
+        <Header className="login-register" as="h4">Don't have an account yet?
+          <NavLink to="/register"> Sign Up &rarr;</NavLink>
         </Header>
       </Form>
       {incorrect && <h2>username or password incorrect</h2>}
@@ -72,18 +65,20 @@ const FormikForm = withFormik({
   }),
 
   handleSubmit(values, { props }) {
+    console.log("props details are", props)
     axios
       .post("https://receipt-tracker-api.herokuapp.com/login", values)
       .then(res => {
-        console.log(values);
-        console.log(res);
+        //console.log(values);
+        //console.log(res);
         localStorage.setItem("token", res.data.token);
         props.addUsernameToState(values.username);
         props.history.push("/");
       })
       .catch(err => {
-        console.log(values);
-        console.log(err.response);
+        //setIncorrect(true)
+        // console.log(values, err.response.data);
+        console.log(err.response.data);
       });
   }
 })(Login);

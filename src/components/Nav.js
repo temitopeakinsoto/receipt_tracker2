@@ -31,13 +31,13 @@ class Nav extends Component {
               <NavLink to="/add-receipt"> Add Receipt +</NavLink>
           </Menu.Item>
 
-          <Menu.Item
+          {/* <Menu.Item
             name="Sign Up"
             active={activeItem === "Sign Up"}
             onClick={this.handleItemClick}
           >
               <NavLink to="/sign-up"> Sign Up</NavLink>
-          </Menu.Item>
+          </Menu.Item> */}
 
           {!localStorage.getItem('token') ? (<Menu.Item
             name="Log In"

@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Tab } from "semantic-ui-react";
+import Nav from "../components/Nav";
 import TabContent from "./TabContent";
 import { resetAsyncProps } from "../actions";
 import { getReceipts } from "../actions/getReceipts";
@@ -241,6 +242,7 @@ const Dashboard = props => {
 
   return (
     <div>
+      <Nav/>
       {
         props.isLoading ? (
           <Loader
