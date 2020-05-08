@@ -2,14 +2,9 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { Button, Form as SemForm } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
-
 import { addNewReceipt, uploadPic } from "../actions/index";
 import { data as optionData } from '../data/data';
 
-const errorStyle = {
-  fontSize: "1em",
-  color: "red"
-};
 
 const AddReceiptForm = props => {
   console.log(props);

@@ -100,7 +100,7 @@ const FormikForm = withFormik({
           if (err.status === 400) {
             console.log(err.response.data);
             props.history.push(
-              "/login",
+              "/",
               setErrors({
                 takenCreds: "That email or username is already in use!"
               })

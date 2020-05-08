@@ -27,7 +27,7 @@ const Dashboard = props => {
     props.resetAsyncProps();
   }, [])
 
-  console.log("FROM THE DASH-", props.data);
+  // console.log("FROM THE DASH-", props.data);
   const panes = [
     {
       menuItem: "Recent",
@@ -246,8 +246,8 @@ const Dashboard = props => {
       {
         props.isLoading ? (
           <Loader
-                type="Puff"
-                color="#00BFFF"
+            type="Puff"
+            color="#00BFFF"
                 /> 
         ) :
         <Tab

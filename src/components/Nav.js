@@ -21,23 +21,13 @@ class Nav extends Component {
     return (
       <>
         <Menu inverted size="large" color="green" fluid widths={3}>
-          {/* {the icon looks a little -wonky- will update during polish} */}
-
           <Menu.Item
             name="Add Receipt"
             active={activeItem === "Add Receipt"}
             onClick={this.handleItemClick}
           >
-              <NavLink to="/add-receipt"> Add Receipt +</NavLink>
+            <NavLink to="/add-receipt"> Add Receipt +</NavLink>
           </Menu.Item>
-
-          {/* <Menu.Item
-            name="Sign Up"
-            active={activeItem === "Sign Up"}
-            onClick={this.handleItemClick}
-          >
-              <NavLink to="/sign-up"> Sign Up</NavLink>
-          </Menu.Item> */}
 
           {!localStorage.getItem('token') ? (<Menu.Item
             name="Log In"
