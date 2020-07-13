@@ -25,7 +25,7 @@ class Nav extends Component {
             style={{ width: "60px" }}
             className="ReceiptLogo"
             src={logo_image}
-            alt="logo"
+            alt="logo file"
           />
         </NavLink>
         <Menu inverted size="large" color="green" fluid widths={3}>
