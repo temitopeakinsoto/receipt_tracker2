@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Menu, Button } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
+import logo from "../logo-2.svg";
 
 class Nav extends Component {
   state = { activeItem: "dashboard" };
@@ -11,15 +12,22 @@ class Nav extends Component {
     this.setState({ activeItem: name });
   };
   signOut = () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem("token");
     // window.location.reload();
-
-  }
+  };
   render() {
     const { activeItem } = this.state;
 
     return (
       <>
+        <NavLink to="/">
+          <img
+            style={{ width: "60px" }}
+            className="ReceiptLogo"
+            src={logo}
+            alt="logo"
+          />
+        </NavLink>
         <Menu inverted size="large" color="green" fluid widths={3}>
           <Menu.Item
             name="Add Receipt"
@@ -28,32 +36,16 @@ class Nav extends Component {
           >
             <NavLink to="/add-receipt"> Add Receipt +</NavLink>
           </Menu.Item>
-
-          {!localStorage.getItem('token') ? (<Menu.Item
-            name="Log In"
-            active={activeItem === "Log In"}
-            onClick={this.handleItemClick}
-          >
-            <NavLink to="/login">
-                <Button primary>Log In</Button>
-            </NavLink>
-          </Menu.Item>):(<Menu.Item
-            name="Log Out"
-            active={activeItem === "Log Out"}
-            onClick={this.signOut}
-          ><NavLink to="/login">
-              <Button color="red">Log Out</Button>
-           </NavLink>
-          </Menu.Item>)}
-
+            <Menu.Item
+              name="Log Out"
+              active={activeItem === "Log Out"}
+              onClick={this.signOut}
+            >
+              <NavLink to="/login">
+                <Button color="red">Log Out</Button>
+              </NavLink>
+            </Menu.Item>
         </Menu>
-        <NavLink to="/">
-          <img
-            className="ReceiptLogo"
-            src="https://files.slack.com/files-pri/T4JUEB3ME-FMQ7Z2Z60/image.png"
-            alt="logo"
-          />
-        </NavLink>
       </>
     );
   }
