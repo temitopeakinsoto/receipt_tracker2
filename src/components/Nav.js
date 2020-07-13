@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Menu, Button } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
-import logo from "../logo-2.svg";
+import logo_image from "../logo-2.svg";
 
 class Nav extends Component {
   state = { activeItem: "dashboard" };
@@ -24,7 +24,7 @@ class Nav extends Component {
           <img
             style={{ width: "60px" }}
             className="ReceiptLogo"
-            src={logo}
+            src={logo_image}
             alt="logo"
           />
         </NavLink>
@@ -42,7 +42,7 @@ class Nav extends Component {
               onClick={this.signOut}
             >
               <NavLink to="/login">
-                <Button color="red">Log Out</Button>
+                <Button color="red">Log Out</Button> 
               </NavLink>
             </Menu.Item>
         </Menu>
